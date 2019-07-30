@@ -1,31 +1,41 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <b-container>
+      <h1>Welcome to Blockchain Demo!</h1>
+      <blockchain></blockchain>
+      <div class="formGroup">
+        <addBlock></addBlock>
+        <resetBlock></resetBlock>
+      </div>
+    </b-container>
   </div>
 </template>
+<script>
+import blockchain from "@/components/blockchain.vue";
+import addBlock from "@/components/addBlock.vue";
+import resetBlock from "@/components/resetBlock.vue";
+export default {
+  name: "app",
+  components: {
+    blockchain,
+    addBlock,
+    resetBlock
+  }
+};
+</script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container {
+  max-width: 800px;
+}
+
+h1 {
   text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.formGroup {
+  background-color: #ddd;
+  border: 2px solid #ccc;
+  padding: 20px;
 }
 </style>
